@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Nav from '../components/Nav'
 
 export default function Home() {
   return (
@@ -6,36 +7,20 @@ export default function Home() {
       <Head>
         <title>Matthew Ewan-Laws</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <main>
         <div className="main-container">
-          <div className="left">
-            <div className="nav">
-              <ul className="nav-list">
-                <li className="link link-1">About</li>
-                <li className="link link-2">Projects</li>
-                <li className="link link-3">Contact</li>
-                <li className="link link-4">CV</li>
-              </ul>
-              <div>
-              </div>
-            </div>
-          </div>
-            <div className="vertical-divider" />
+          <Nav />
           <div className="right">
             <div className="main-title">
-              <h1>Matthew Ewan-Laws</h1>
+              <h1>Matthew <nobr>Ewan-Laws</nobr></h1>
               <h2>Web Developer</h2>
             </div>
           </div>
         </div>
-        <div className="content">
-          <p>Hello world</p>
-        </div>
       </main>
-
-      <footer></footer>
     </div>
   );
 }

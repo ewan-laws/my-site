@@ -15,7 +15,7 @@ html,body {
   display: flex;
 }
 
-.left {
+.nav-container {
   background-color: $primary;
   display: flex;
   flex-grow: 1;
@@ -26,11 +26,11 @@ html,body {
   flex-grow: 3;
 }
 
-.vertical-divider {
+.divider {
   width: 0;
   height: 0;
   border-top: 100vh solid $primary;
-  border-right: calc(25vh) solid transparent;
+  border-right: 25vh solid transparent;
 }
 
 .left-container {
@@ -53,13 +53,13 @@ html,body {
 
 .nav-list {
   font-size: 2.5em;
+  text-align: center;
 }
 
 .nav-list>li {
   list-style-type: none;
   margin-top: 1em;
   font-weight: bold;
-  text-align: center;
 }
 
 .link {
@@ -87,4 +87,64 @@ html,body {
 
 p {
   color: $tertiary;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .hamburger {
+    position: relative;
+    width: 2.4em;
+    height: 2.4em;
+    background-image: url('/hamburger.svg');
+    background-size: contain;
+    margin-top: -3.2em;
+    margin-right: 1em;
+    fill: $tertiary;
+    float: right;
+    cursor: pointer;
+  }
+
+  .main-container {
+    display: block;
+  }
+
+  .nav.hidden {
+    height: 5em;
+  }
+
+  .nav-list {
+    font-size: 2em;
+    padding: 0;
+    text-align: left;
+    padding-left: 1em;
+  }
+
+  .nav.hidden > .nav-list {
+    display: none;
+  }
+
+  .nav.expanded {
+    display: block;
+    position: relative;
+  }
+
+  .left {
+    background-color: $primary;
+  }
+
+  .right {
+    height: 2em;
+  }
+
+  .main-title {
+    margin-left: 1em;
+  }
+
+  .divider {
+    width: 0;
+    height: 0;
+    border-top: 15vw solid $primary;
+    border-right: 100vw solid transparent;
+    // border-right: none;
+  }
 }
