@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 const Nav = () => {
   const [isExpanded, setExpanded] = useState(false);
@@ -8,10 +9,21 @@ const Nav = () => {
       <div className="nav-container">
         <div className={`nav ${isExpanded ? "expanded" : "hidden"}`}>
           <ul className="nav-list">
-            <li className="link link-1">About</li>
-            <li className="link link-2">Projects</li>
-            <li className="link link-3">Contact</li>
-            <li className="link link-4">CV</li>
+            <li className="link">
+              <Link href="/about">About</Link>
+            </li>
+            <li className="link">
+              <Link href="/projects">Projects</Link>
+            </li>
+            <li className="link">
+              <Link href="/contact">Contact</Link>
+            </li>
+            <li className="link">
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li className="link">
+              <Link href="/cv">CV</Link>
+            </li>
           </ul>
         </div>
       </div>
