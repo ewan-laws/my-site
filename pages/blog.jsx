@@ -1,3 +1,3 @@
-const Blog = () => <div>Blog</div>;
+const Blog = () => <div>This is my blog</div>;
 
 export default Blog;
