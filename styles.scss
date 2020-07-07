@@ -42,24 +42,31 @@ html,body {
 }
 
 .nav {
+  margin-top: -3vh;
+  margin-right: -1vw;
   display: flex;
-  margin-top: -1em;
   align-items: center;
   justify-content: center;
   color: $tertiary;
   height: 100%;
   width: 100%;
+  position: relative;
+  left: 2vw;
 }
 
 .nav-list {
-  font-size: 2.5em;
+  font-size: 6vh;
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-list>li {
   list-style-type: none;
   margin-top: 1em;
   font-weight: bold;
+  transition: margin-top 2s;
+  transition-timing-function: ease;
 }
 
 .nav-list a {
@@ -81,16 +88,16 @@ html,body {
 }
 
 .main-title h1 {
-  font-size: 3em;
+  font-size: 8vh;
 }
 
 .main-title h2 {
-  font-size: 1.4em;
+  font-size: 6vh;
 }
 
 .content {
   background-color: $primary;
-  padding: 2em;
+  padding: 1vw;
   color: $tertiary;
 }
 
