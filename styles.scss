@@ -15,10 +15,16 @@ html,body {
   display: flex;
 }
 
+.nav-outside {
+  height: 100%;
+  display: flex;
+}
+
 .nav-container {
   background-color: $primary;
   display: flex;
   flex-grow: 1;
+  z-index: 10;
 }
 
 .right {
@@ -31,13 +37,13 @@ html,body {
   height: 0;
   border-top: 100vh solid $primary;
   border-right: 25vh solid transparent;
+  filter: drop-shadow(0 3px 6px black);
 }
 
 .left-container {
 }
 
 .main-container {
-  // width: 100vh;
   overflow: hidden;
 }
 
@@ -54,19 +60,23 @@ html,body {
   left: 2vw;
 }
 
+.nav-list-container {
+  position: relative;
+  padding-left: 4vw;
+}
+
 .nav-list {
   font-size: 6vh;
-  text-align: center;
+  text-align: left;
   padding: 0;
   margin: 0;
 }
-
 .nav-list>li {
+  position: relative;
   list-style-type: none;
   margin-top: 1em;
+
   font-weight: bold;
-  transition: margin-top 2s;
-  transition-timing-function: ease;
 }
 
 .nav-list a {
@@ -79,6 +89,7 @@ html,body {
 }
 
 .link {
+  position: relative;
 }
 
 .main-title {
@@ -105,7 +116,6 @@ p {
   color: $tertiary;
 }
 
-
 @media only screen and (max-width: 700px) {
   .hamburger {
     position: relative;
@@ -118,10 +128,20 @@ p {
     fill: $tertiary;
     float: right;
     cursor: pointer;
+    z-index: 2;
   }
 
   .main-container {
     display: block;
+  }
+
+  .nav-outside {
+    display: block;
+  }
+
+  .nav-container {
+    position: relative;
+    z-index: 1;
   }
 
   .nav.hidden {
@@ -135,7 +155,7 @@ p {
     padding-left: 1em;
   }
 
-  .nav.hidden > .nav-list {
+  .nav.hidden .nav-list {
     display: none;
   }
 
@@ -158,9 +178,37 @@ p {
 
   .divider {
     width: 0;
-    height: 0;
+    height: 10px;
+    margin-bottom: 10px;
     border-top: 15vw solid $primary;
     border-right: 100vw solid transparent;
-    // border-right: none;
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,0.5));
+    z-index: 0;
+  }
+}
+
+.page-content {
+  width: 70%;
+  margin: auto;
+}
+
+.page-header {
+  &-content {
+    height: 3em;
+    padding: 0.7em 0 0 0.4em;
+    width: 100%;
+    background-color: $primary;
+    color: $tertiary;
+
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  &-divider {
+    width: 0;
+    height: 0;
+    border-top: 2vw solid $primary;
+    border-left: 100vw solid transparent;
   }
 }
