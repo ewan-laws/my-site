@@ -27,7 +27,7 @@ const variants = {
   },
 };
 
-export default function Home() {
+const Home = ({ isMobile }) => {
   return (
     <div className="container">
       <Head>
@@ -37,7 +37,7 @@ export default function Home() {
       </Head>
       <main>
         <div className="main-container">
-          <Nav />
+          <Nav isMobile={isMobile} />
           <div className="right">
             <motion.div
               variants={variants.titleContainer}
@@ -59,4 +59,21 @@ export default function Home() {
       </main>
     </div>
   );
-}
+};
+
+Home.getInitialProps = ({ req }) => {
+  let userAgent;
+  if (req) {
+    userAgent = req.headers["user-agent"];
+  } else {
+    userAgent = navigator.userAgent;
+  }
+  const isMobile = Boolean(
+    userAgent.match(
+      /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+    )
+  );
+
+  return { isMobile };
+};
+export default Home;

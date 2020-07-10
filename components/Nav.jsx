@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const navContainer = {
   start: {
@@ -54,8 +54,35 @@ const NavLink = ({ href, children }) => (
   </li>
 );
 
-const Nav = () => {
+const Nav = ({ isMobile }) => {
+  const controls = useAnimation();
   const [isExpanded, setExpanded] = useState(false);
+  console.log(isMobile, isExpanded);
+  const navExpander = {
+    contracted: () => ({
+      // height: isMobile ? 0 : "auto",
+    }),
+    expanded: {
+      // height: "auto",
+    },
+  };
+
+  const navListExpander = {
+    contracted: () => ({
+      opacity: isMobile ? 0 : 1,
+      height: isMobile ? 0 : "initial",
+    }),
+    expanded: {
+      opacity: 1,
+      height: "initial",
+    },
+  };
+
+  const toggleExpander = () => {
+    controls.start(isExpanded ? "contracted" : "expanded");
+    setExpanded(!isExpanded);
+  };
+
   return (
     <motion.div
       variants={navContainer}
@@ -64,19 +91,29 @@ const Nav = () => {
       className="nav-outside"
     >
       <div className="nav-container">
-        <div className={`nav ${isExpanded ? "expanded" : "hidden"}`}>
+        <motion.div
+          variants={navExpander}
+          initial="contracted"
+          animate={controls}
+          className="nav"
+        >
           <motion.div variants={navList} className="nav-list-container">
-            <ul className="nav-list">
+            <motion.ul
+              variants={navListExpander}
+              initial="contracted"
+              animate={controls}
+              className="nav-list"
+            >
               <NavLink href="/tech">Technologies</NavLink>
               <NavLink href="/projects">Projects</NavLink>
               <NavLink href="/contact">Contact</NavLink>
               <NavLink href="/about">About</NavLink>
               <NavLink href="/cv">CV</NavLink>
-            </ul>
+            </motion.ul>
           </motion.div>
-        </div>
+        </motion.div>
+        <div className="hamburger" onClick={toggleExpander} />
       </div>
-      <div className="hamburger" onClick={() => setExpanded(!isExpanded)} />
       <div className="divider"></div>
     </motion.div>
   );

@@ -16,7 +16,6 @@ html,body {
 }
 
 .nav-outside {
-  height: 100%;
   display: flex;
 }
 
@@ -116,21 +115,25 @@ p {
 
 @media only screen and (max-width: 700px) {
   .hamburger {
-    position: relative;
     width: 2.4em;
     height: 2.4em;
     background-image: url('/hamburger.svg');
     background-size: contain;
-    margin-top: -3.2em;
+    margin-top: 0.8em;
     margin-right: 1em;
     fill: $tertiary;
     float: right;
     cursor: pointer;
-    z-index: 2;
+    z-index: 20;
   }
 
   .main-container {
     display: block;
+  }
+
+  .right {
+    margin-top: 2em;
+    height: auto;
   }
 
   .nav-outside {
@@ -142,8 +145,9 @@ p {
     z-index: 1;
   }
 
-  .nav.hidden {
-    height: 5em;
+  .nav {
+    margin-top: 0;
+    display: block;
   }
 
   .nav-list {
@@ -151,15 +155,19 @@ p {
     padding: 0;
     text-align: left;
     padding-left: 1em;
+    margin-left: 1em;
+  }
+
+  .nav.hidden {
+    height: 0;
   }
 
   .nav.hidden .nav-list {
-    display: none;
+    opacity: 0;
   }
 
-  .nav.expanded {
-    display: block;
-    position: relative;
+  .nav.expanded .nav-list {
+    opacity: 1;
   }
 
   .left {
@@ -167,7 +175,7 @@ p {
   }
 
   .right {
-    height: 2em;
+    float: none;
   }
 
   .main-title {
