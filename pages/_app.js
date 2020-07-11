@@ -1,6 +1,7 @@
 import "../styles/styles.scss";
 import "../styles/page.scss";
 import "../styles/page-header.scss";
+import "../styles/content-grid.scss";
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {

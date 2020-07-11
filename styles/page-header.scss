@@ -18,9 +18,15 @@
     h2 {
       margin: 0;
       padding: 0;
+      a {
+          color: $tertiary;
+          text-decoration: none;
+      }
+      a:hover {
+          text-decoration: underline;
+      }
     }
   }
-
 
   &-divider {
     position: relative;
