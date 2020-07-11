@@ -3,7 +3,7 @@ import PageHeader from "./PageHeader";
 const Layout = ({ children }) => (
   <div>
     <PageHeader />
-    <div className="page-content">{children}</div>
+    <div className="page">{children}</div>
   </div>
 );
 

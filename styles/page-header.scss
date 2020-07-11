@@ -1,8 +1,10 @@
 @import "utilities/variables";
 
 .page-header {
+  position: fixed;
   width: 100%;
   overflow-x: hidden;
+  z-index: 20;
 
   &-content {
     position: relative;
