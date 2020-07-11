@@ -1,0 +1,44 @@
+@import "utilities/variables";
+
+.page-header {
+  width: 100%;
+  overflow-x: hidden;
+
+  &-content {
+    position: relative;
+    height: 3em;
+    padding: 1em 0 0 1em;
+    width: 100%;
+    background-color: $primary;
+    color: $tertiary;
+    z-index: 20;
+
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+
+  &-divider {
+    position: relative;
+    width: 100%;
+    height: 0;
+    top: -0.5vw;
+    left: -50vw;
+    border-top: 2vw solid $primary;
+    border-left: 150vw solid transparent;
+    filter: drop-shadow(0 3px 3px rgba(0,0,0,0.5));
+    z-index: 0;
+  }
+
+  /***/
+  /** Well that was fun.*/
+  /** */
+  /** Simple box shadows don't work with slanted border. Filter is required.   */
+  /** Trouble is, the shadow produced by the filter only affect the border   */
+  /** So it looks weird where the border is thin, and lets the light through   */
+  /** So I shifted it left by half a screen width, then down by a little, this   */
+  /** creates a larger height so the shadow looks better.
+   */
+}

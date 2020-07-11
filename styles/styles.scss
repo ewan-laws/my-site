@@ -1,0 +1,198 @@
+@import "utilities/variables";
+
+html,body {
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, sans-serif;
+  background: $tertiary;
+}
+
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.nav-outside {
+  display: flex;
+}
+
+.nav-container {
+  background-color: $primary;
+  display: flex;
+  flex-grow: 1;
+  z-index: 10;
+}
+
+.right {
+  height: 100%;
+  flex-grow: 3;
+}
+
+.divider {
+  width: 0;
+  height: 0;
+  border-top: 100vh solid $primary;
+  border-right: 25vh solid transparent;
+  filter: drop-shadow(0 3px 6px black);
+}
+
+.left-container {
+}
+
+.main-container {
+  overflow: hidden;
+}
+
+.nav {
+  margin-top: -3vh;
+  margin-right: -1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $tertiary;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  left: 2vw;
+}
+
+.nav-list-container {
+  position: relative;
+  padding-left: 4vw;
+}
+
+.nav-list {
+  font-size: 6vh;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+.nav-list>li {
+  position: relative;
+  list-style-type: none;
+  margin-top: 1em;
+
+  font-weight: bold;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: $tertiary;
+}
+
+.nav-list a:hover {
+  text-decoration: underline;
+}
+
+.link {
+  position: relative;
+}
+
+.main-title {
+  position: relative;
+  top: 30%;
+  color: $primary;
+  h1 {
+    font-size: 8vh;
+  }
+  h2 {
+    font-size: 6vh;
+  }
+}
+
+.content {
+  background-color: $primary;
+  padding: 1vw;
+  color: $tertiary;
+}
+
+p {
+  color: $tertiary;
+}
+
+@media only screen and (max-width: 700px) {
+  .hamburger {
+    width: 2.4em;
+    height: 2.4em;
+    background-image: url('/hamburger.svg');
+    background-size: contain;
+    margin-top: 0.8em;
+    margin-right: 1em;
+    fill: $tertiary;
+    float: right;
+    cursor: pointer;
+    z-index: 20;
+  }
+
+  .main-container {
+    display: block;
+  }
+
+  .right {
+    margin-top: 2em;
+    height: auto;
+  }
+
+  .nav-outside {
+    display: block;
+  }
+
+  .nav-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .nav {
+    margin-top: 0;
+    display: block;
+  }
+
+  .nav-list {
+    font-size: 2em;
+    padding: 0;
+    text-align: left;
+    padding-left: 1em;
+    margin-left: 1em;
+  }
+
+  .nav.hidden {
+    height: 0;
+  }
+
+  .nav.hidden .nav-list {
+    opacity: 0;
+  }
+
+  .nav.expanded .nav-list {
+    opacity: 1;
+  }
+
+  .left {
+    background-color: $primary;
+  }
+
+  .right {
+    float: none;
+  }
+
+  .main-title {
+    margin-left: 1em;
+  }
+
+  .divider {
+    width: 0;
+    height: 10px;
+    margin-bottom: 10px;
+    border-top: 15vw solid $primary;
+    border-right: 100vw solid transparent;
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,0.5));
+    z-index: 0;
+  }
+}
+
+.page-content {
+  width: 70%;
+  margin: auto;
+}
+
