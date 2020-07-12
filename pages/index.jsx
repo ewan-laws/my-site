@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Nav from "../components/Nav";
+import { motion, useAnimation } from "framer-motion";
 
-import { motion } from "framer-motion";
+import { useEnterAnimationControl } from "../hooks";
 
 const variants = {
   titleContainer: {
@@ -10,6 +11,9 @@ const variants = {
       transition: {
         staggerChildren: 0.1,
       },
+    },
+    exit: {
+      opacity: 0,
     },
   },
   titleItem: {
@@ -24,10 +28,16 @@ const variants = {
         stiffness: 1000,
       },
     },
+    exit: {
+      opacity: 0,
+    },
   },
 };
 
 const Home = ({ isMobile }) => {
+  const contentControls = useAnimation();
+  const onNavigate = () => contentControls.start("exit");
+  useEnterAnimationControl(contentControls, "end");
   return (
     <div className="container">
       <Head>
@@ -37,12 +47,12 @@ const Home = ({ isMobile }) => {
       </Head>
       <main>
         <div className="main-container">
-          <Nav isMobile={isMobile} />
+          <Nav isMobile={isMobile} onExitAnimate={onNavigate} />
           <div className="right">
             <motion.div
               variants={variants.titleContainer}
               initial="start"
-              animate="end"
+              animate={contentControls}
               className="main-title"
             >
               <motion.div variants={variants.titleItem}>

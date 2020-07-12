@@ -1,15 +1,24 @@
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import { motion, useAnimation } from "framer-motion";
+import Router from "next/router";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 
 const navContainer = {
   start: {
     x: -500,
+    opacity: 1,
   },
   end: {
     x: 0,
+    opacity: 1,
     transition: {
       when: "beforeChildren",
+      stiffness: 1000,
+    },
+  },
+  exit: {
+    x: -500,
+    opacity: 0,
+    transition: {
       stiffness: 1000,
     },
   },
@@ -42,29 +51,51 @@ const child = {
   },
 };
 
-const NavLink = ({ href, children }) => (
-  <li className="link">
-    <Link href={href}>
-      <a>
+const NavLink = ({ href, children, animate }) => {
+  const clicked = (e) => {
+    e.preventDefault();
+    animate(() => {
+      Router.push(href);
+    });
+  };
+  return (
+    <li className="link">
+      <a href="#" onClick={clicked}>
         <motion.div style={{ position: "relative" }} variants={child}>
           {children}
         </motion.div>
       </a>
-    </Link>
-  </li>
-);
+    </li>
+  );
+};
 
-const Nav = ({ isMobile }) => {
-  const controls = useAnimation();
+const navExpander = {
+  contracted: () => ({
+    // height: isMobile ? 0 : "auto",
+  }),
+  expanded: {
+    // height: "auto",
+  },
+};
+
+const Nav = ({ isMobile, onExitAnimate }) => {
   const [isExpanded, setExpanded] = useState(false);
-  console.log(isMobile, isExpanded);
-  const navExpander = {
-    contracted: () => ({
-      // height: isMobile ? 0 : "auto",
-    }),
-    expanded: {
-      // height: "auto",
-    },
+
+  useEffect(() => {
+    containerControls.start("end");
+  }, []);
+
+  const controls = useAnimation();
+  const containerControls = useAnimation();
+
+  const onExit = (done) => {
+    onExitAnimate();
+    containerControls.start("exit").then(done);
+  };
+
+  const toggleExpander = () => {
+    controls.start(isExpanded ? "contracted" : "expanded");
+    setExpanded(!isExpanded);
   };
 
   const navListExpander = {
@@ -78,16 +109,11 @@ const Nav = ({ isMobile }) => {
     },
   };
 
-  const toggleExpander = () => {
-    controls.start(isExpanded ? "contracted" : "expanded");
-    setExpanded(!isExpanded);
-  };
-
   return (
     <motion.div
       variants={navContainer}
       initial="start"
-      animate="end"
+      animate={containerControls}
       className="nav-outside"
     >
       <div className="nav-container">
@@ -104,11 +130,21 @@ const Nav = ({ isMobile }) => {
               animate={controls}
               className="nav-list"
             >
-              <NavLink href="/languages">Languages</NavLink>
-              <NavLink href="/projects">Projects</NavLink>
-              <NavLink href="/contact">Contact</NavLink>
-              <NavLink href="/about">About</NavLink>
-              <NavLink href="/cv">CV</NavLink>
+              <NavLink href="/languages" animate={onExit}>
+                Languages
+              </NavLink>
+              <NavLink href="/projects" animate={onExit}>
+                Projects
+              </NavLink>
+              <NavLink href="/contact" animate={onExit}>
+                Contact
+              </NavLink>
+              <NavLink href="/about" animate={onExit}>
+                About
+              </NavLink>
+              <NavLink href="/cv" animate={onExit}>
+                CV
+              </NavLink>
             </motion.ul>
           </motion.div>
         </motion.div>
