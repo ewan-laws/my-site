@@ -1,3 +1,4 @@
+import Head from "next/head";
 import TopNav from "./TopNav";
 import { motion, useAnimation } from "framer-motion";
 
@@ -38,6 +39,12 @@ const Layout = ({ children }) => {
   useNavigateAway(() => controls.start("exit"));
   return (
     <div>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css"
+        />
+      </Head>
       <motion.div variants={headerVariants} initial="hidden" animate="show">
         <TopNav />
       </motion.div>
