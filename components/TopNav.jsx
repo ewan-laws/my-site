@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const PageHeader = () => (
+const TopNav = () => (
   <div className="page-header">
     <div className="page-header-content">
       <h2>
@@ -13,4 +13,4 @@ const PageHeader = () => (
   </div>
 );
 
-export default PageHeader;
+export default TopNav;
