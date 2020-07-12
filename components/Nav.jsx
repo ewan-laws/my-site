@@ -104,7 +104,7 @@ const Nav = ({ isMobile }) => {
               animate={controls}
               className="nav-list"
             >
-              <NavLink href="/tech">Technologies</NavLink>
+              <NavLink href="/languages">Languages</NavLink>
               <NavLink href="/projects">Projects</NavLink>
               <NavLink href="/contact">Contact</NavLink>
               <NavLink href="/about">About</NavLink>
