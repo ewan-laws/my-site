@@ -68,6 +68,15 @@ const Langauges = () => (
           before the bug was spotted.
         </p>
       </Technology>
+      <Technology title="Node.js" logo={devIcon("nodejs-plain")}>
+        <p>
+          As I enjoy working with JavaScript, I was excited when I first found
+          out about Node.js. The tech allowed both the backend frontend to be
+          programmed in the same language. It also usefully provides
+          non-blocking io.
+        </p>
+        <p>I have experience with Express as a backend.</p>
+      </Technology>
       <Technology title="Terminal" logo={<SVGIcon filename="terminal" />}>
         <p>
           Having used (and currently using) Linux as my daily driver, I feel
