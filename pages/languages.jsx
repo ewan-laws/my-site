@@ -2,12 +2,21 @@ import Layout from "../components/Layout";
 import PageHeading from "../components/PageHeading";
 import Technology from "../components/ContentTechBlock";
 import ContentRow from "../components/ContentRow";
+import DevIcon from "../components/DevIcon";
+
+const devIcon = (name) => <DevIcon name={name} coloured />;
+
+const ReduxIcon = () => (
+  <div
+    style={{ width: 50, height: 50, backgroundImage: "url(logos/redux.svg)" }}
+  ></div>
+);
 
 const Langauges = () => (
   <Layout>
     <PageHeading>Languages & Technologies</PageHeading>
     <ContentRow>
-      <Technology title="JavaScript" logo="javascript-plain">
+      <Technology title="JavaScript" logo={devIcon("javascript-plain")}>
         <p>
           The lingua-franca of the web, and the first "proper" programming
           language I learnt when I was in my mid-teens. Although derrided by
@@ -18,11 +27,11 @@ const Langauges = () => (
           JavaScript before one begins using frameworks or libraries.
         </p>
         <p>
-          As each year a new spec is released from the TC39 committee, I try to
-          keep my eye on the new features being introduced.
+          As each year a new spec is released from the TC39 committee, I do my
+          best to keep my eye on the new features being introduced.
         </p>
       </Technology>
-      <Technology title="React" logo="react-original">
+      <Technology title="React" logo={devIcon("react-original")}>
         <p>
           Since first being introduced to react for my first employment, I have
           become a huge advocate for the component model.
@@ -32,7 +41,7 @@ const Langauges = () => (
           than the traditional methods available, e.g. from jQuery and VanillaJS
         </p>
       </Technology>
-      <Technology title="Redux" logo="redux-">
+      <Technology title="Redux" logo={<ReduxIcon />}>
         <p>
           React is mostly just a view library, although it does support some
           state management, when developing a large application with many moving
@@ -44,7 +53,7 @@ const Langauges = () => (
           interactions and how they affect the state and UI.
         </p>
       </Technology>
-      <Technology title="Git" logo="git-plain">
+      <Technology title="Git" logo={devIcon("git-plain")}>
         <p>
           Git is essential for my personal and professional endeavours, both
           code and non-code projects.

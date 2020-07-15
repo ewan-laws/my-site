@@ -6,17 +6,19 @@
         margin-bottom: 1em;
         &-title {
             font-size: 24px;
-            margin-bottom: 0.3em;
             display: flex;
             align-items: center;
-            > div {
+            > p {
                 margin-right: 0.4em;
+                margin-left: 0.4em;
+                color: black;
             }
         }
 
         &-content {
             p {
                 color: black;
+                margin-top: 0.1em;
             }
         }
     }
