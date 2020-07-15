@@ -131,7 +131,7 @@ const Nav = ({ isMobile, onExitAnimate }) => {
               className="nav-list"
             >
               <NavLink href="/languages" animate={onExit}>
-                Languages
+                <nobr>Tech Stack</nobr>
               </NavLink>
               <NavLink href="/projects" animate={onExit}>
                 Projects
