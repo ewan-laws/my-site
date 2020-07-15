@@ -6,9 +6,13 @@ import DevIcon from "../components/DevIcon";
 
 const devIcon = (name) => <DevIcon name={name} coloured />;
 
-const ReduxIcon = () => (
+const SVGIcon = ({ filename }) => (
   <div
-    style={{ width: 50, height: 50, backgroundImage: "url(logos/redux.svg)" }}
+    style={{
+      width: 50,
+      height: 50,
+      backgroundImage: `url(logos/${filename}.svg)`,
+    }}
   ></div>
 );
 
@@ -41,7 +45,7 @@ const Langauges = () => (
           than the traditional methods available, e.g. from jQuery and VanillaJS
         </p>
       </Technology>
-      <Technology title="Redux" logo={<ReduxIcon />}>
+      <Technology title="Redux" logo={<SVGIcon filename="redux" />}>
         <p>
           React is mostly just a view library, although it does support some
           state management, when developing a large application with many moving
@@ -62,6 +66,17 @@ const Langauges = () => (
           Certain features git has are very powerful, for example git-bisect has
           helped me track down a breaking change that was implemented some time
           before the bug was spotted.
+        </p>
+      </Technology>
+      <Technology title="Terminal" logo={<SVGIcon filename="terminal" />}>
+        <p>
+          Having used (and currently using) Linux as my daily driver, I feel
+          confident using the terminal, the same goes with Unix systems such as
+          MacOS
+        </p>
+        <p>
+          My setup is Zsh + oh-my-zsh, this provides many useful features,
+          including syntax highlighting, and better aesthetics.
         </p>
       </Technology>
     </ContentRow>
