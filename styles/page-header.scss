@@ -1,12 +1,35 @@
 @import "utilities/variables";
 
+@media only screen and (max-width: 700px) {
+  ul.page-header-content-links {
+    display: none;
+  }
+}
+
 .page-header {
   position: fixed;
   width: 100%;
   overflow-x: hidden;
+  overflow-y: hidden;
   z-index: 20;
 
   &-content {
+    &-links {
+      position: absolute;
+      right: 2em;
+      display: flex;
+      list-style-type: none;
+      justify-content: flex-end;
+      margin-top: 0.5em;
+      li {
+        margin-left: 1em;
+      }
+      a {
+        color: $tertiary;
+        text-decoration: none;
+      }
+    }
+    display: flex;
     position: relative;
     height: 3em;
     padding: 1em 0 0 1em;
@@ -26,6 +49,7 @@
           text-decoration: underline;
       }
     }
+
   }
 
   &-divider {

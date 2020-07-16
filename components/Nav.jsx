@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Router from "next/router";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
+import navLinks from "../navlinks.json";
 
 const navContainer = {
   start: {
@@ -130,21 +131,11 @@ const Nav = ({ isMobile, onExitAnimate }) => {
               animate={controls}
               className="nav-list"
             >
-              <NavLink href="/languages" animate={onExit}>
-                <nobr>Tech Stack</nobr>
-              </NavLink>
-              <NavLink href="/projects" animate={onExit}>
-                Projects
-              </NavLink>
-              <NavLink href="/contact" animate={onExit}>
-                Contact
-              </NavLink>
-              <NavLink href="/about" animate={onExit}>
-                About
-              </NavLink>
-              <NavLink href="/cv" animate={onExit}>
-                CV
-              </NavLink>
+              {navLinks.map(({ href, text }) => (
+                <NavLink href={href} animate={onExit}>
+                  <nobr>{text}</nobr>
+                </NavLink>
+              ))}
             </motion.ul>
           </motion.div>
         </motion.div>

@@ -1,0 +1,22 @@
+[
+  {
+    "href": "/languages",
+    "text": "Tech Stack"
+  },
+  {
+    "href": "/projects",
+    "text": "Projects"
+  },
+  {
+    "href": "/contact",
+    "text": "Contact"
+  },
+  {
+    "href": "/about",
+    "text": "About"
+  },
+  {
+    "href": "/cv",
+    "text": "CV"
+  }
+]
