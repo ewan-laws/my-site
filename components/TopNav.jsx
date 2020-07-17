@@ -19,6 +19,7 @@ const TopNav = () => (
           </li>
         ))}
       </ul>
+      <div className="page-header-content-hamburger" />
     </div>
     <div className="page-header-divider"></div>
   </div>
