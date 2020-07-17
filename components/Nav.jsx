@@ -131,8 +131,8 @@ const Nav = ({ isMobile, onExitAnimate }) => {
               animate={controls}
               className="nav-list"
             >
-              {navLinks.map(({ href, text }) => (
-                <NavLink href={href} animate={onExit}>
+              {navLinks.map(({ href, text }, i) => (
+                <NavLink key={`${href}_${i}`} href={href} animate={onExit}>
                   <nobr>{text}</nobr>
                 </NavLink>
               ))}
