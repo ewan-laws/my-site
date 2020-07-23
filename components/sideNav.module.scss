@@ -1,0 +1,91 @@
+@import "styles/utilities/variables";
+
+@mixin element-color($color) {
+  background-image: url('data:image/svg+xml;utf8,<svg ...><g stroke="#{$color}" ... /></g></svg>');
+}
+
+.container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: $primary;
+}
+
+
+.navList {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    z-index: 21;
+    list-style-type: none;
+    text-align: center;
+}
+
+.link {
+    font-size: min(7vh, 9vw);
+    margin-bottom: 4vh;
+}
+
+.homeLink {
+    font-size: min(10vh, 10vw);
+    margin-bottom: 5vh;
+}
+
+
+.link a {
+    color: $tertiary;
+    text-decoration: none;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
+
+.hamburger {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    div {
+        width: 35px;
+        height: 5px;
+        margin: 6px 0;
+        border-radius: 4px;
+        background-color: $primary;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+
+    cursor: pointer;
+    float: right;
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+.close:before, .close:after {
+    position: absolute;
+    content: ' ';
+    height: 33px;
+    width: 3px;
+    background-color: $tertiary;
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
