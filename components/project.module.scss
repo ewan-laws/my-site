@@ -1,0 +1,73 @@
+@import "styles/utilities/variables";
+
+$large: 1440px;
+$small: 669px;
+
+.outer {
+    display: flex;
+    @media only screen and (max-width: $large) {
+        display: block;
+    }
+}
+
+.screenshot {
+    position: relative;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    flex-basis: 50%;
+    width: 100%;
+    height: 60vw;
+    @media only screen and (min-width: $large) {
+        height: 28vw;
+    }
+    @media only screen and (max-width: $small) {
+        height: 77vw;
+    }
+    z-index: 0;
+}
+
+.container {
+    flex-basis: 50%;
+    background-color: $primary;
+    color: $tertiary;
+    border-radius: 10px;
+    box-shadow: 2px 2px 7px grey;
+    padding: 10px;
+}
+
+.header {
+    background: $tertiary;
+    color: $secondary;
+    border-radius: 5px;
+    padding: 5px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.title {
+    font-size: 30px;
+    margin-right: 30px;
+}
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:10px;
+}
+
+.tech {
+    font-size: 17px;
+    background-color: $secondary;
+    color: $tertiary;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: -8px;
+    margin-bottom: 10px;
+    padding: 7px;
+}
+
+.body {
+    overflow-y: scroll;
+}
+
