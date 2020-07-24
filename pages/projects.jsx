@@ -14,6 +14,8 @@ const Projects = () => (
         "JavaScript",
         "React",
         "Node.js",
+        "Redux",
+        "Bootstrap",
         "Apollo/GraphQL",
         "Meteor.js",
       ]}
@@ -39,6 +41,26 @@ const Projects = () => (
         </>
       )}
     />
+    <Project
+      title="HRGO - Members Area"
+      screenshotUrl="members-area.png"
+      technologies={["JavaScript", "React", "Redux", "Webpack"]}
+      renderBody={() => (
+        <>
+          <p>
+            HRGO is a recruitment company, as part of the web development team
+            we were tasked to create a members area with user authentication
+            where candidates could save their details such as their phone
+            number, address, work history, CV documents, etc that would allow
+            them to more efficiently apply for jobs.
+          </p>
+          <p>
+            It also meant that we could automate the processing of timesheets.
+          </p>
+        </>
+      )}
+    />
+    <p>Hello World</p>
   </LayoutSideNav>
 );
 

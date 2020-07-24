@@ -5,6 +5,7 @@ $small: 669px;
 
 .outer {
     display: flex;
+    margin-bottom: 30px;
     @media only screen and (max-width: $large) {
         display: block;
     }
@@ -32,15 +33,15 @@ $small: 669px;
     color: $tertiary;
     border-radius: 10px;
     box-shadow: 2px 2px 7px grey;
-    padding: 10px;
+    padding: 15px;
 }
 
 .header {
     background: $tertiary;
     color: $secondary;
-    border-radius: 5px;
-    padding: 5px;
-    padding-bottom: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    padding-bottom: 15px;
     display: flex;
     justify-content: flex-start;
 }
@@ -63,11 +64,9 @@ $small: 669px;
     border-radius: 10px;
     margin-right: 10px;
     margin-top: -8px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding: 7px;
 }
 
 .body {
-    overflow-y: scroll;
 }
-
