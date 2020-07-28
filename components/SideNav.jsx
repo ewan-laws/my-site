@@ -4,6 +4,8 @@ import Router from "next/router";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import navLinks from "../navlinks.json";
 
+import MyLink from "./MyLink";
+
 import styles from "./sideNav.module.scss";
 
 const navContainer = {
@@ -55,15 +57,13 @@ const child = {
   },
 };
 
-const NavLink = ({ href, children }) => (
+const NavLink = ({ href, children, external }) => (
   <li className={styles.link}>
-    <Link href={href}>
-      <a>
-        <motion.div className={styles.linkContents} variants={child}>
-          {children}
-        </motion.div>
-      </a>
-    </Link>
+    <MyLink href={href} external={external}>
+      <motion.div className={styles.linkContents} variants={child}>
+        {children}
+      </motion.div>
+    </MyLink>
   </li>
 );
 
@@ -105,8 +105,8 @@ const Nav = ({ isMobile }) => {
           <NavLink href="/">
             <div className={styles.homeLink}>Matthew Ewan-Laws</div>
           </NavLink>
-          {navLinks.map(({ href, text }, i) => (
-            <NavLink key={`${href}_${i}`} href={href}>
+          {navLinks.map(({ href, text, external }, i) => (
+            <NavLink key={`${href}_${i}`} href={href} external={external}>
               <nobr>{text}</nobr>
             </NavLink>
           ))}

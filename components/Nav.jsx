@@ -52,7 +52,7 @@ const child = {
   },
 };
 
-const NavLink = ({ href, children, animate }) => {
+const NavLink = ({ href, children, animate, external }) => {
   const clicked = (e) => {
     e.preventDefault();
     animate(() => {
@@ -61,7 +61,7 @@ const NavLink = ({ href, children, animate }) => {
   };
   return (
     <li className="link">
-      <a href="#" onClick={clicked}>
+      <a href={external ? href : "#"} onClick={external ? () => {} : clicked}>
         <motion.div style={{ position: "relative" }} variants={child}>
           {children}
         </motion.div>
@@ -131,8 +131,13 @@ const Nav = ({ isMobile, onExitAnimate }) => {
               animate={controls}
               className="nav-list"
             >
-              {navLinks.map(({ href, text }, i) => (
-                <NavLink key={`${href}_${i}`} href={href} animate={onExit}>
+              {navLinks.map(({ href, text, external }, i) => (
+                <NavLink
+                  key={`${href}_${i}`}
+                  href={href}
+                  animate={onExit}
+                  external={external}
+                >
                   <nobr>{text}</nobr>
                 </NavLink>
               ))}

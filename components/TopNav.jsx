@@ -1,9 +1,11 @@
 import Link from "next/link";
-
 import { useState, useEffect } from "react";
+
 import { motion, useAnimation } from "framer-motion";
 
 import { useWindowSize } from "../hooks";
+
+import MyLink from "./MyLink";
 
 import navLinks from "../navlinks.json";
 
@@ -61,9 +63,7 @@ const TopNav = () => {
         >
           {navLinks.map(({ href, text }, i) => (
             <li key={`${href}_${i}`}>
-              <Link href={href}>
-                <a>{text}</a>
-              </Link>
+              <MyLink href={href}>{text}</MyLink>
             </li>
           ))}
         </motion.ul>
