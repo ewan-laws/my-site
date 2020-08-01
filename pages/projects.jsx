@@ -60,7 +60,35 @@ const Projects = () => (
         </>
       )}
     />
-    <p>Hello World</p>
+    <Project
+      title="Portfolio Website"
+      screenshotUrl="portfolio.png"
+      technologies={["JavaScript", "React", "Next.js"]}
+      renderBody={() => (
+        <>
+          <p>
+            Having lost my job due to C-19, I thought it was a good time to
+            produce this website. It is fully designed and built by myself using
+            technologies I believe best fit its usecase and my skillset.
+          </p>
+          <p>
+            This website was built using Next.js, which is a static website
+            builder that seemed appropriate for my portfolio website.
+          </p>
+          <p>
+            With React, and a simple yet extensible routing that is based upon
+            file names. It is a static website builder, and part of the JAMstack
+            ecosystem. Being able to serve a website statically reduces
+            complexity and provides greater security.
+          </p>
+          <p>
+            Along with the serverside rendering, I believe that Next.js is an
+            appropriate choice of platform for my portfolio website, it allows
+            me to develop it quickly and efficiently.
+          </p>
+        </>
+      )}
+    />
   </LayoutSideNav>
 );
 

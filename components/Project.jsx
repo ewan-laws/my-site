@@ -20,8 +20,10 @@ const Project = ({
         <div className={styles.title}>{title}</div>
       </div>
       <div className={styles.technologies}>
-        {technologies.map((tech) => (
-          <div className={styles.tech}>{tech}</div>
+        {technologies.map((tech, i) => (
+          <div key={`project_${i}`} className={styles.tech}>
+            {tech}
+          </div>
         ))}
       </div>
 

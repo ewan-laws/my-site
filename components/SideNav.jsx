@@ -78,7 +78,6 @@ const Hamburger = ({ onClick }) => (
 
 const Nav = ({ isMobile }) => {
   const [isExpanded, setExpanded] = useState(false);
-  console.log(navLinks);
 
   const expand = () => setExpanded(true);
 
