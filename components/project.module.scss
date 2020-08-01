@@ -2,42 +2,46 @@
 
 $large: 1440px;
 $small: 669px;
+$shadowColour: rgba(0,0,0,0.5);
 
-.outer {
-    display: flex;
-    margin-bottom: 30px;
-    @media only screen and (max-width: $large) {
-        display: block;
-    }
+.container {
+    background-color: $primary;
+    color: $tertiary;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px $shadowColour;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.screenshotContainer {
+    background-color: $tertiary;
+    box-shadow: inset 4px 4px 10px $shadowColour;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 20px;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .screenshot {
     position: relative;
     background-size: 100%;
     background-repeat: no-repeat;
-    flex-basis: 50%;
     width: 100%;
-    height: 60vw;
-    @media only screen and (min-width: $large) {
-        height: 28vw;
-    }
-    @media only screen and (max-width: $small) {
-        height: 77vw;
-    }
+    height: 23.5vw;
+    // @media only screen and (min-width: $large) {
+    //     height: 28vw;
+    // }
+    // @media only screen and (max-width: $small) {
+    //     height: 77vw;
+    // }
     z-index: 0;
 }
 
-.container {
-    flex-basis: 50%;
-    background-color: $primary;
-    color: $tertiary;
-    border-radius: 10px;
-    box-shadow: 2px 2px 7px grey;
-    padding: 15px;
-}
 
 .header {
     background: $tertiary;
+    box-shadow: inset 4px 4px 10px $shadowColour;
     color: $secondary;
     border-radius: 20px;
     padding: 20px;
