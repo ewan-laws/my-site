@@ -7,7 +7,7 @@ import { useWindowSize } from "../hooks";
 
 import MyLink from "./MyLink";
 
-import navLinks from "../navlinks.json";
+import navLinks from "../navlinks";
 
 const TopNav = () => {
   const { width } = useWindowSize();
@@ -61,9 +61,11 @@ const TopNav = () => {
           variants={linksVariants}
           className="page-header-content-links"
         >
-          {navLinks.map(({ href, text }, i) => (
+          {navLinks.map(({ href, text, external }, i) => (
             <li key={`${href}_${i}`}>
-              <MyLink href={href}>{text}</MyLink>
+              <MyLink href={href} external={external}>
+                {text}
+              </MyLink>
             </li>
           ))}
         </motion.ul>

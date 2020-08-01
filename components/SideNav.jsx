@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Router from "next/router";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
-import navLinks from "../navlinks.json";
+
+import navLinks from "../navlinks";
 
 import MyLink from "./MyLink";
 
@@ -77,6 +78,7 @@ const Hamburger = ({ onClick }) => (
 
 const Nav = ({ isMobile }) => {
   const [isExpanded, setExpanded] = useState(false);
+  console.log(navLinks);
 
   const expand = () => setExpanded(true);
 

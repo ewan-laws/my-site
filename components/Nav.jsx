@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Router from "next/router";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
-import navLinks from "../navlinks.json";
+import navLinks from "../navlinks";
 
 const navContainer = {
   start: {
