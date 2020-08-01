@@ -1,3 +1,4 @@
+import Router from "next/router";
 import { useEffect } from "react";
 import { initGA, logPageView } from "../utils/analytics";
 
