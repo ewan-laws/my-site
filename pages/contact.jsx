@@ -10,6 +10,7 @@ const Projects = () => (
       <div>
         <div className={styles.contactLine}>
           <span className={styles.contactType}>Email:</span> matt dot ewan-laws
+          <span className={styles.contactType}>Email:</span> matt dot ewanlaws
           at gmail dot com
         </div>
         <div className={styles.contactLine}>
