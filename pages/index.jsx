@@ -44,6 +44,10 @@ const Home = ({ isMobile }) => {
         <title>Matthew Ewan-Laws</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="google-site-verification"
+          content="iXYfs7f_08uA5Be55wjFWJc3xCuKrQAxylwQlTDizsU"
+        />
       </Head>
       <main>
         <div className="main-container">
