@@ -1,6 +1,7 @@
 import Head from "next/head";
-import Nav from "../components/Nav";
 import { motion, useAnimation } from "framer-motion";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 import { useEnterAnimationControl } from "../hooks";
 
@@ -71,6 +72,7 @@ const Home = ({ isMobile }) => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

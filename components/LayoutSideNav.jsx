@@ -1,6 +1,8 @@
 import Head from "next/head";
-import SideNav from "./SideNav";
 import { motion, useAnimation } from "framer-motion";
+
+import SideNav from "./SideNav";
+import Footer from "./Footer";
 
 import { useEnterAnimationControl, useNavigateAway } from "../hooks";
 
@@ -51,6 +53,7 @@ const Layout = ({ children }) => {
       <motion.div variants={contentVariants} initial="hidden" animate="show">
         <div className="page">{children}</div>
       </motion.div>
+      <Footer />
     </div>
   );
 };
