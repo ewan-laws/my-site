@@ -69,8 +69,9 @@ const Projects = () => (
           <>
             <p>
               Having lost my job due to Covid, I thought it was a good time to
-              produce this website. It is fully designed and built by myself
-              using technologies I believe best fit its usecase and my skillset.
+              build my portfolio website. It is fully designed and built by
+              myself using technologies I believe best fit its usecase and my
+              skillset.
             </p>
             <p>
               This website was built using Next.js, which is a static website
