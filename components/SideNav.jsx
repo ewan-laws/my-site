@@ -104,7 +104,9 @@ const Nav = ({ isMobile }) => {
 
         <ul className={styles.navList}>
           <NavLink href="/">
-            <div className={styles.homeLink}>Matthew Ewan-Laws</div>
+            <div className={styles.homeLink}>
+              Matthew <nobr>Ewan-Laws</nobr>
+            </div>
           </NavLink>
           {navLinks.map(({ href, text, external }, i) => (
             <NavLink key={`${href}_${i}`} href={href} external={external}>

@@ -15,7 +15,6 @@
     z-index: 20;
 }
 
-
 .navList {
     position: relative;
     padding: 0;
@@ -27,12 +26,16 @@
 
 .link {
     font-size: min(7vh, 9vw);
-    margin-bottom: 4vh;
+    line-height: min(7vh, 9vw);
 }
 
 .homeLink {
     font-size: min(10vh, 10vw);
-    margin-bottom: 5vh;
+    line-height: min(10vh, 10vw);
+}
+
+.link, .homeLink {
+    margin-bottom: 7vh;
 }
 
 
