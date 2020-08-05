@@ -37,9 +37,6 @@ html,body {
   filter: drop-shadow(0 3px 6px black);
 }
 
-.left-container {
-}
-
 .main-container {
   overflow: hidden;
 }
@@ -99,13 +96,6 @@ html,body {
   h2 {
     font-size: 6vh;
   }
-}
-
-.content {
-}
-
-p {
-  color: black;
 }
 
 @media only screen and (max-width: 700px) {

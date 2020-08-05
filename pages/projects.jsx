@@ -21,7 +21,7 @@ const Projects = () => (
           "Meteor.js",
         ]}
         renderBody={() => (
-          <>
+          <div className={styles.projectDescription}>
             <p>
               For my first job out of university I was tasked to work on
               building this web application.
@@ -39,7 +39,7 @@ const Projects = () => (
               <li>Hotels</li>
               <li>Flights</li>
             </ul>
-          </>
+          </div>
         )}
       />
       <Project
@@ -47,7 +47,7 @@ const Projects = () => (
         screenshotUrl="members-area.png"
         technologies={["JavaScript", "React", "Redux", "Webpack"]}
         renderBody={() => (
-          <>
+          <div className={styles.projectDescription}>
             <p>
               HRGO is a recruitment company, as part of the web development team
               we were tasked to create a members area with user authentication
@@ -58,7 +58,7 @@ const Projects = () => (
             <p>
               It also meant that we could automate the processing of timesheets.
             </p>
-          </>
+          </div>
         )}
       />
       <Project
@@ -66,7 +66,7 @@ const Projects = () => (
         screenshotUrl="portfolio.png"
         technologies={["JavaScript", "React", "Next.js"]}
         renderBody={() => (
-          <>
+          <div className={styles.projectDescription}>
             <p>
               Having lost my job due to Covid, I thought it was a good time to
               build my portfolio website. It is fully designed and built by
@@ -88,7 +88,7 @@ const Projects = () => (
               appropriate choice of platform for my portfolio website, it allows
               me to develop it quickly and efficiently.
             </p>
-          </>
+          </div>
         )}
       />
     </div>
