@@ -1,4 +1,6 @@
-import Layout from "../components/Layout";
+import Link from "next/link";
+
+import Layout from "../components/LayoutSideNav";
 import PageHeading from "../components/PageHeading";
 import Technology from "../components/ContentTechBlock";
 import ContentRow from "../components/ContentRow";
@@ -6,12 +8,12 @@ import DevIcon from "../components/DevIcon";
 
 const devIcon = (name) => <DevIcon name={name} coloured />;
 
-const SVGIcon = ({ filename }) => (
+const Icon = ({ filename, size = 50 }) => (
   <div
     style={{
-      width: 50,
-      height: 50,
-      backgroundImage: `url(logos/${filename}.svg)`,
+      width: size,
+      height: size,
+      backgroundImage: `url(logos/${filename})`,
     }}
   ></div>
 );
@@ -45,7 +47,7 @@ const Langauges = () => (
           than the traditional methods available, e.g. from jQuery and VanillaJS
         </p>
       </Technology>
-      <Technology title="Redux" logo={<SVGIcon filename="redux" />}>
+      <Technology title="Redux" logo={<Icon filename="redux.svg" />}>
         <p>
           React is mostly just a view library, although it does support some
           state management, when developing a large application with many moving
@@ -77,7 +79,7 @@ const Langauges = () => (
         </p>
         <p>I have experience with Express as a backend.</p>
       </Technology>
-      <Technology title="Terminal" logo={<SVGIcon filename="terminal" />}>
+      <Technology title="Terminal" logo={<Icon filename="terminal.svg" />}>
         <p>
           Having used (and currently using) Linux as my daily driver, I feel
           confident using the terminal, the same goes with Unix systems such as
@@ -86,6 +88,20 @@ const Langauges = () => (
         <p>
           My setup is Zsh + oh-my-zsh, this provides many useful features,
           including syntax highlighting, and better aesthetics.
+        </p>
+      </Technology>
+      <Technology logo={<Icon filename="nextjs.png" size={60} />}>
+        <p>
+          Next.js is a web application framework that takes a hybrid approach of
+          server-side rendering and static site generations. The website you are
+          currently browsing is built using Next.js.
+        </p>
+        <p>
+          I have written a{" "}
+          <Link href="/blog/why-nextjs">
+            <a>blog post</a>
+          </Link>{" "}
+          on the advantages of using Next.js.
         </p>
       </Technology>
     </ContentRow>

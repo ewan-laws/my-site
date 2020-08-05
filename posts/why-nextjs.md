@@ -19,7 +19,7 @@ Unfortunately this transition from static to dynamic websites has a few drawback
 - **Security**, more complexity, more "moving parts" means more opportunities for the nefarious to potentially exploit your website and gain access to stuff they really shouldn't.
 - **Scalability**, as the number of users to a website grows, its toll on resources grows quickly too, we need load balancing, caching, better hardware. These each introduce more complexity, more areas to maintain, more time spent by your team, more cost to the business.
 
-With those pain points listed, you've most likely worked out that I'll next be showing you how Next.js goes towards fixing those issues.
+With those pain points listed, you've most likely worked out that I'll next be showing you how [Next.js](https://nextjs.org/) goes towards fixing those issues.
 
 ## Static site generation (SSR)
 
