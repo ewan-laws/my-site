@@ -16,8 +16,7 @@ export default [
     text: "Blog",
   },
   {
-    href:
-      "https://docs.google.com/document/d/12IYyFNuGtNFa01lIIYdjL1gnxP_2ylvauf-X1DfS-zI/edit?usp=sharing",
+    href: "/cv.pdf",
     external: true,
     text: "CV",
   },
