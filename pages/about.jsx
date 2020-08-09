@@ -110,14 +110,18 @@ const About = () => (
           I love a good fantasy, or sci-fi book, though I'll read any genre if
           it's good.
         </p>
-        <div style={{ float: "right" }}>
+        <div
+          style={{
+            float: "right",
+          }}
+        >
           <ImageCircular src="/me.jpg" height={250} />
         </div>
         <p>
           Before lockdown I would enjoy meeting with friends an family to play
           board games. Currently that is restricted to the Internet.
         </p>
-        <p>
+        <p style={{ marginBottom: 100 }}>
           We also have a projector and sound system set up our second sitting
           room, we like our films!
         </p>
