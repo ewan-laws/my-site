@@ -12,6 +12,10 @@ export default [
     text: "Contact",
   },
   {
+    href: "/about",
+    text: "About",
+  },
+  {
     href: "/blog",
     text: "Blog",
   },
