@@ -15,7 +15,7 @@ But then we realised the power that could be tapped into if we allowed change to
 Unfortunately this transition from static to dynamic websites has a few drawbacks:
 
 - **Speed**, your customers are an fickle and impatient lot, if they're sitting there for over one second looking at a blank page, chances are you've lost them forever to their social media platform of choice. Website load times have been proven to have a large imapact on bounce rate.
-- **Cost**, whereas once a servers job was to simply send a few files to the user, they now perform a large number of duties, including 
+- **Cost**, whereas once a servers job was to simply send a few files to the user, they now perform a large number of duties.
 - **Security**, more complexity, more "moving parts" means more opportunities for the nefarious to potentially exploit your website and gain access to stuff they really shouldn't.
 - **Scalability**, as the number of users to a website grows, its toll on resources grows quickly too, we need load balancing, caching, better hardware. These each introduce more complexity, more areas to maintain, more time spent by your team, more cost to the business.
 
