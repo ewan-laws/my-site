@@ -3,7 +3,7 @@ layout: post
 title: "Why your next website should be built with Next.js"
 author: Matthew Ewan-Laws
 created: 2020-08-04
-isPublished: false
+isPublished: true
 ---
 
 Let's start with a (short) history lesson.
